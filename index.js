@@ -19,8 +19,8 @@ const externalURLAuthToken = process.env.AUTH_TOKEN;
 
 cron.schedule(cronTime, async () => {
     console.log(`Current Time: ${new Date().toUTCString()}`);
-    const exteralURLData = await makeRequestWithAuth(externalURL, externalURLAuthToken);
-    console.log(exteralURLData);
+    const externalURLData = await makeRequestWithAuth(externalURL, externalURLAuthToken);
+    console.log(externalURLData);
     const selfURLData = await makeRequest(selfURL);
     console.log(selfURLData);
 });
