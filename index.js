@@ -33,7 +33,7 @@ async function codeToRepeat() {
     console.log(selfURLData);
 }
 
-setInterval(codeToRepeat, 5000);
+setInterval(codeToRepeat, 60000);
 
 const PORT = process.env.PORT || 3000;
 
