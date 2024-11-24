@@ -17,13 +17,23 @@ const selfURL = process.env.SELF_URL;
 const cronTime = process.env.CRON_TIME;
 const externalURLAuthToken = process.env.AUTH_TOKEN;
 
-cron.schedule(cronTime, async () => {
+// cron.schedule(cronTime, async () => {
+//     console.log(`Current Time: ${new Date().toUTCString()}`);
+//     const externalURLData = await makeRequestWithAuth(externalURL, externalURLAuthToken);
+//     console.log(externalURLData);
+//     const selfURLData = await makeRequest(selfURL);
+//     console.log(selfURLData);
+// });
+
+async function codeToRepeat() {
     console.log(`Current Time: ${new Date().toUTCString()}`);
     const externalURLData = await makeRequestWithAuth(externalURL, externalURLAuthToken);
     console.log(externalURLData);
     const selfURLData = await makeRequest(selfURL);
     console.log(selfURLData);
-});
+}
+
+setInterval(codeToRepeat, 5000);
 
 const PORT = process.env.PORT || 3000;
 
